@@ -1,66 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Css only-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!--Biblioteca de javascript-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <title>M6 - Examen UF1</title>
-    <style>
-        #personajes{
-            display: flex;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Css only-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!--Biblioteca de javascript-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+  </script>
+  <title>M6 - Examen UF1</title>
+  <style>
+    #personajes {
+      display: flex;
+    }
+  </style>
 </head>
+
 <body>
-    <h2>M6 - Examen UF1 Edgar Muñoz Manjón</h2>
-    <div id="personajes"></div>
-    <div class="formulario">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" placeholder="name@example.com">
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea2" class="form-label">Imagen</label>
-            <input type="text" class="form-control" id="imagen" placeholder="imagen" alt="imagen">
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea3" class="form-label">Edad</label>
-            <input type="number" class="form-control" id="edad" placeholder="edad">
-          </div>
-          <button type="button" class="btn btn-primary" id="buscar" onclick="creaPersonaje">Crear</button>
-          <button type="button" class="btn btn-secondary" id="buscador" onclick="buscaPersonaje">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-            </svg>
-            Buscar
-          </button>
-
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
-            </span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-          
+  <h2>M6 - Examen UF1 Edgar Muñoz Manjón</h2>
+  <div id="personajes"></div>
+  <div class="formulario">
+    <div class="mb-3">
+      <label class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" placeholder="name@example.com">
     </div>
-    <script src ="funciones.js"></script>
-    <script>
-        const tarjeta = pintaTarjetas(arrayPersonajes);
-        console.log(tarjeta);
+    <div class="mb-3">
+      <label class="form-label">Imagen</label>
+      <input type="text" class="form-control" id="imagen" placeholder="imagen">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Edad</label>
+      <input type="number" class="form-control" id="edad" placeholder="edad">
+    </div>
+    <button type="button" class="btn btn-primary" id="buscar" onclick="creaPersonaje">Crear</button>
+    <button type="button" class="btn btn-secondary" id="buscador" onclick="buscaPersonaje">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+        viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+      </svg>
+      Buscar
+    </button>
 
-        const botonEnviar = document.querySelector("#buscar");
-		//Escuchamos evento y llamamos a creaUsuarivalid
-		botonEnviar.addEventListener("click", creaPersonaje);
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+          viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </svg>
+      </span>
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+        aria-describedby="basic-addon1" id="watch">
+    </div>
+    <div id="filtro"></div>
+  </div>
+  <script src="funciones.js"></script>
+  <script>
+    //creacion de la base de datos, que es un array de objetos y lo muestro por consola
+    const arrayPersonajes = [{
+        id: 1,
+        nombre: "Batman",
+        imagenUrl: "https://pngimg.com/uploads/batman/batman_PNG83.png",
+        edad: 4
+      },
+      {
+        id: 2,
+        nombre: "One Piece",
+        imagenUrl: "https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2020/04/One-Piece.jpg?fit=2560%2C1440&ssl=1",
+        edad: 44
+      },
+      {
+        id: 3,
+        nombre: "Superman",
+        imagenUrl: "https://th.bing.com/th/id/OIP.B75ZHwlbnRygChj68H60HQHaJ4?pid=ImgDet&rs=1",
+        edad: 444
+      },
+      {
+        id: 4,
+        nombre: "Hulk",
+        imagenUrl: "https://image.tmdb.org/t/p/original/5AQUYjvO0Bnkjj0CArfykrDoABG.jpg",
+        edad: 4444
+      }
+    ];
+    console.log(arrayPersonajes);
+    //En la variable inyectar, selecciono el div con id personajes y llamo a la función pintaTarjetas, que recibe la Base de Datos e la inyecta con innerHTML
+    var inyectar = document.querySelector('#personajes').innerHTML = pintaTarjetas(arrayPersonajes);
+    //guardo en la variable tarjeta la funcion pintaTarjetas, que recibe la base de datos y lo muestro por consola
+    const tarjeta = pintaTarjetas(arrayPersonajes);
+    console.log(tarjeta);
+    
+    const botonEnviar = document.querySelector("#buscar");
+    //Escuchamos evento y llamamos a creaPersonaje
+    botonEnviar.addEventListener("click", creaPersonaje);
 
-        const buscador = document.querySelector("#buscador");
-		//Escuchamos evento y llamamos a creaUsuarivalid
-		buscador.addEventListener("click", buscaPersonaje);
-    </script>
+    const buscador = document.querySelector("#buscador");
+    //Escuchamos evento y llamamos a buscaPersonaje
+    buscador.addEventListener("click", buscaPersonaje);
+  </script>
 </body>
+
 </html>
